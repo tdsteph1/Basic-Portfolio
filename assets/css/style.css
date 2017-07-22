@@ -1,0 +1,533 @@
+body
+{
+	background-color: #ffffff;							/* white */
+	font-style: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	margin: auto;			
+														/* Centers the first <div> container box to fit perfectly at the top */
+	
+
+}
+
+h1, h2, h3
+{
+	font-style: 'Georgia', Times, "Times New Roman", serif;
+}
+
+p
+{
+	color: #777777;
+	font-size: 18px;
+}
+
+.header
+{
+	width: 960px;
+	overflow: hidden;									/* Allows (name) box to remain inside the border when we do .name{float: left} otherwise we get error where box is outside of container
+															   This prevents Parent(header) overiding child (name) and gets rid of (Calapsing Margin Error) */
+	background-color: #ffffff;
+	color: black;
+	padding-top: 1px;									/* OR padding: 1px 1px 1px 1px; Note: NEVER USE COMMA(,)s to seperate!!!!!!! */	
+	padding-bottom: 0px;
+	padding-left: 1px;
+	padding-right: 1px;
+	margin: auto;
+	margin: 1px;											/* Try: margin: 1px; This will slightly reduce the size of the container box due to adding spacing all around the container. */
+    margin-left: 480px;
+
+	
+	
+	  													
+	  													/*  									Calapsing Margin
+
+	  																The Parent container <body> box is colliding or making contact with the child <div id="header"> child container.
+	  																As a result Parent(body) overides child container(#header) causing body to add space below moving <div id="header">
+	  																downward instead of <div id="header" moving up with bottom spacing between (#header) and elements below.
+
+	  																To fix this try adding overflow: auto; in #header.
+							 																								or
+
+																    Add top padding to the parent container(body) or add top padding to child container <div id="header"> EX: padding-top: 1px;
+
+														*/
+	
+	border-bottom-style: solid;							/* (#headers)'s bottom border */
+	 border-width: 2px; 
+	 border-color: #cccccc;								/* dark grey */
+   
+   position: relative;
+   top: 1px;
+   
+
+ }
+
+.name
+{
+	padding-top: 1px;
+	
+	padding: 40px;							/* Same As padding-top:40px padding-bottom: 40px padding-left:40px; padding-right: 40px;							
+											   NOTE: padding-top; 1px or overflow: auto will prevent (Clapsing Margin) where parent box(.header) overides child box (.name); */
+	padding-right: 10px;
+	background-color: #4aaaa5;
+	color: #ffffff;
+	margin-bottom: 0px;						/* NOTE: margin-bottom: 1%; puts a space between name(TJ Stephens) & (#header) box which increases the size of #header's padding-bottom */
+	margin-left: 20px;
+	width: 200px;
+
+	position: relative;						/* So we don't increase (.header's) bottom padding, we only move (.name) up by 5px. */
+	bottom: 0.5px;
+    float: left;							/* So (name) and (A_P_C) can be adjacent to each other. Note: parent <div> must have overlow: auto; in order for this to work */
+   
+
+	
+}
+
+    
+.A_P_C 
+{
+	float: left;
+	display: inline;
+	font-size: 18px;
+	margin: 10px;
+
+	position: relative;
+	left: 200px;
+	top: 60px;
+    
+    
+   
+		
+ 
+}
+
+.main-content-container
+{
+	overflow: hidden;
+	background-color: #eff0f2;
+	width: 960px;
+	padding-right: 2px;
+	padding-bottom: 80px;				 /* NOTE: Before adding to the bottom take note that if there is margin space between (Main-content-container) & (footer), you'll be pushing against the spacing.
+											 so remove the margin ; */
+    height: 644px; 					
+	margin-left: 480px;
+  
+
+	
+    
+   
+    
+
+    
+    border-top-style: solid;			/* (#headers)'s bottom border */
+	 border-width: 1px; 
+	 border-color: #cccccc;	
+
+
+}
+
+.main-content
+{
+
+	overflow: auto;
+	background-color: #ffffff;
+	width: 650px;
+	margin-left: 20px;					/* moves white main-content box to the right due to spacing on the left */
+	margin-top: 30px;					/* moves white main-conent down due to spacing above */
+	padding-bottom: 210px;
+    border-style: solid;							
+	border-width: 1px; 
+	border-color: #cccccc;	
+
+	
+
+	 
+}
+
+.main-content p
+{
+	margin-left: 10px;					 /* allows horizontal spacing between (main-content) container and text. Similar to margin-right: 5x in (.bio-image) */
+}
+
+.About-Me
+{
+    
+    overflow: auto;
+	color: #4aaaa5;
+	margin-left: 10px;
+										/*(border-bottom: 2px solid #eff0f2;) Use in Psuedo since we're customizing the width*/
+
+}
+
+.About-Me:after							/* Psuedo Element: work around for changing the border width for (connect) container  */
+{
+	content: "";
+	display: block;
+	padding-top: 0px;
+	border-bottom: 3px solid #eff0f2;
+	width: 95%;
+
+	
+}
+
+.bio-image
+{
+	
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;						/* Allows the image to move the adjacent text to the right allowing space between image and text.
+											/*vertical-align: top;*/
+}
+
+.connect
+{
+	overflow: auto;
+	width: 270px;
+	background-color: #ffffff;
+	color: #4aaaa5;
+	text-align: center;
+	margin-left: 680px;
+	padding-bottom: 60px;
+	position: relative;
+	bottom: 587px;
+
+	position: fixed;						/* This prevents (.connect) container from moving everytime we add text to the adjacent container (.main-contact/AboutMe)
+											   So If I were to add more text inside the <div class="main-content"> About Me then the (.contact) box
+											   will continue to move. (position:fixed) solves this issue preventing us from constantly adding more margins */
+	
+	border-style: solid;							
+	border-width: 1px; 
+	border-color: #cccccc;	
+	
+	 
+}
+
+.connect:after								/* Psuedo Element: work around for changing the border width for (connect) container  */
+{
+	
+	content: "";
+	display: block;
+	padding-top: 0px;
+	border-bottom: 2px solid #eff0f2;
+	width: 70%;
+
+	position: relative;
+	bottom: 10px;
+	left: 42px;
+	
+}
+
+
+.connect h2
+{
+	/*border-bottom: 2px solid #eff0f2; */
+}
+
+.git_image
+{
+	float: left;
+	margin: 10px;
+							
+	
+}
+
+.link_image
+{
+	float: left;
+	margin: 10px;
+							
+	
+}
+
+.stack_image
+{
+	float: left;
+	margin: 10px;
+								
+	
+}
+
+
+.footer
+{
+	overflow: auto;
+	text-align: center;
+	font-size: 5px;
+	background-color: #666666;
+	overflow: hidden;
+	width: 960px;
+	height: 100px;			
+	margin-left: 480px;
+	margin-top: 0px;
+	padding-right: 2px;
+
+	border-top: 6px solid #4aaaa5; 
+
+	
+
+	
+
+ }
+
+ .footer p
+ {
+ 	font-size: 12px;
+ 	color: white;
+ 	position: relative;
+ 	top: 38px;
+
+
+ }
+
+
+/*  Contact */
+.main-content_2
+{
+
+	overflow: auto;
+	background-color: #ffffff;
+	font-size: 18px;
+	width: 650px;
+	margin-left: 20px;					/* moves white main-content box to the right due to spacing on the left */
+	margin-top: 30px;					/* moves white main-conent down due to spacing above */
+	padding-bottom: 10px;
+  
+  	border-style: solid;							
+	border-width: 1px; 
+	border-color: #cccccc;	
+
+	 
+}
+
+.contact-info
+{
+    
+    overflow: auto;
+	color: #4aaaa5;
+	margin-left: 10px;
+	
+
+
+}
+
+.contact-info:after							/* Psuedo Element: work around for changing the border width for (connect) container  */
+{
+	content: "";
+	display: block;
+	padding-top: 0px;
+	border-bottom: 3px solid #eff0f2;
+	width: 95%;
+
+}
+
+form
+{
+	margin-left: 28px;
+}
+
+input
+{
+	height: 30px;
+	border: 2px solid  #eff0f2;
+}
+
+textarea
+{
+	width: 590px;
+	height: 202px;
+}
+
+.button
+{
+	width: 140px;
+	height: 45px;
+	background-color: #4aaaa5;
+	
+	font-size: 22px;
+	text-align: center;
+
+
+}
+
+.button p
+{
+	color: #ffffff;					    /* (.button p) overides the p selector color preference from the tom */
+	position: relative;
+	top: 10px;
+}
+
+
+::-webkit-input-placeholder  			/* Chrome/Opera/Safari: affects the color of the placeholder for each text field */
+{
+  color: #e5e7ea;
+}
+
+
+/* Porfolio Page */
+.main-content_3
+{
+
+	overflow: auto;
+	background-color: #ffffff;
+	font-size: 18px;
+	width: 650px;
+	margin-left: 20px;					/* moves white main-content box to the right due to spacing on the left */
+	margin-top: 30px;					/* moves white main-conent down due to spacing above */
+	padding-bottom: 0px;
+	
+    
+
+  	border-style: solid;							
+	border-width: 1px; 
+	border-color: #cccccc;	
+
+	
+
+	 
+}
+
+.portfolio-info
+{
+    
+    overflow: auto;
+	color: #4aaaa5;
+	margin-left: 8px;
+
+}
+
+.portfolio-info:after					/* Psuedo Element: work around for changing the border width for (connect) container  */
+{
+	content: "";
+	display: block;
+	padding-top: 0px;
+	border-bottom: 3px solid #eff0f2;
+	width: 95%;
+
+}
+
+.image1
+{
+	
+	margin-left: 20px;
+	width: 250px;
+	height: 200px;
+	position: relative;
+	bottom: 10px;
+
+	
+	
+
+} 
+
+.image-footer1
+{
+	background-color: #4aaaa5;
+	width: 250px;
+	margin-left: 20px;
+	padding-top: 10px;
+	position: relative;
+	bottom: 75px;
+	text-align: center;
+
+}
+
+.footer_p
+{
+	color: white;
+
+	position: relative;
+	bottom: 10px;
+}
+
+.image2
+{
+	margin-left: 350px;
+	width: 250px;
+	height: 200px;
+
+	position: relative;
+	bottom: 282px;
+}
+
+.image-footer2
+{
+	background-color: #4aaaa5;
+	color: #ffffff;
+	width: 250px;
+	margin-left: 20px;
+	padding-top: 10px;
+	position: relative;
+	bottom: 346px;
+	left: 330px;
+	text-align: center;
+
+}
+
+.image3
+{
+	margin-left: 20px;
+	width: 250px;
+	height: 200px;
+
+	position: relative;
+	bottom: 340px;
+}
+
+.image-footer3
+{
+	background-color: #4aaaa5;
+	color: #ffffff;
+	width: 250px;
+	margin-left: 20px;
+	padding-top: 10px;
+	position: relative;
+	bottom: 406px;
+	text-align: center;
+
+}
+
+.image4
+{
+	margin-left: 350px;
+	width: 250px;
+	height: 200px;
+
+	position: relative;
+	bottom: 612px;
+}
+
+.image-footer4
+{
+	background-color: #4aaaa5;
+	color: #ffffff;
+	width: 250px;
+	margin-left: 20px;
+	padding-top: 10px;
+	position: relative;
+	bottom: 678px;
+	left: 330px;
+	text-align: center;;
+
+}
+
+.image5
+{
+	margin-left: 20px;
+	width: 250px;
+	height: 170px;
+
+	position: relative;
+	bottom: 670px;
+}
+
+.image-footer5
+{
+	background-color: #4aaaa5;
+	color: #ffffff;
+	width: 250px;
+	margin-left: 20px;
+	padding-top: 10px;
+	position: relative;
+	bottom: 724px;
+	
+	text-align: center;;
+
+}
